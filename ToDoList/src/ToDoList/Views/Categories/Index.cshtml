@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout";
+}
+@model IEnumerable<ToDoList.Models.Category>
+
+<h2>To Do List</h2>
+<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+<ul>
+    @foreach (var listItem in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listItem.Name)| @Html.ActionLink("Details", "Details", new { id = listItem.CategoryId })</li>
+    }
+</ul>
